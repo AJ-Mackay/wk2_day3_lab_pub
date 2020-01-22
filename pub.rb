@@ -3,9 +3,11 @@ class Pub
 attr_reader :name
 attr_accessor :till
 
-def initialize(name, till)
+def initialize(name, till, drinks, stock)
   @name = name
   @till = till
+  @drinks = drinks
+  @stock = stock
 end
 
 def customer_right_age(customer)

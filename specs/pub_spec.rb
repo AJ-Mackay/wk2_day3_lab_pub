@@ -12,7 +12,16 @@ class PubTest < Minitest::Test
 def setup
   @pub = Pub.new("Armadale Tavern", 100)
   @customer = Customer.new("Timmy", 25, 22, 5)
-  @drink = Drink.new("Whiskey", 10, 1)
+  @drink = Drink.new("Whiskey", 10, 1, 5)
+
+  @drinks = Drink.new{
+    name: "rum and coke",
+    price: 5,
+    alcohol_level: 2,
+    available: 10
+  }
+
+  @stock = {@drinks}
 end
 
 def test_pub_has_a_name
@@ -45,5 +54,7 @@ def test_customer_drunkenness_level
   result = @pub.customer_drunkenness_level(@customer)
   assert_equal("Timmy, I love you, but please leave", result)
 end
+
+
 
 end

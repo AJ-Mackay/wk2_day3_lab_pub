@@ -17,4 +17,12 @@ def buy_drink(drink)
   end
 end
 
+def buy_food(food)
+  @wallet -= food.price
+end
+
+def rejuvenation_level(food)
+  @drunkenness -= food.rejuvenation_level
+end
+
 end
